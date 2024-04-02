@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pass/Fail Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Pass/Fail Calculator</h1>
+    <form action="/result" method="post">
+        {% for i in range(1,7) %}
+        <label for="marks{{i}}">Student {{i}}
+ Marks:</label>
+        <input type="number" id="marks{{i}}" 
+name="marks{{i}}" required><br>
+        {% endfor %}
+        <button type="submit">Calculate</button>
+    </form>
+</body>
+</html>
